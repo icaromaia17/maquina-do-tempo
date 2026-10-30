@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Máquina do Tempo da Internet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="flash" aria-hidden="true"></div>
+  <div class="fundo-grade" aria-hidden="true"></div>
+
+  <header class="container py-4 py-lg-5 text-center">
+    <p class="selo mb-3"><i class="bi bi-hdd-network"></i> WIKIMEDIA + WAYBACK MACHINE</p>
+    <h1 class="titulo">MÁQUINA DO TEMPO<span class="cursor">_</span></h1>
+    <p class="subtitulo mx-auto mt-3">
+      Escolha uma data. Veja o que o mundo vivia e como a internet era naquele dia.
+    </p>
+  </header>
+
+  <main class="container pb-5">
+
+    <section class="janela mb-4">
+      <div class="janela-barra">
+        <span class="ponto ponto-vermelho"></span>
+        <span class="ponto ponto-amarelo"></span>
+        <span class="ponto ponto-verde"></span>
+        <span class="janela-titulo">painel_de_controle.exe</span>
+      </div>
+      <div class="janela-corpo">
+        <form id="formulario" class="row g-3">
+          <div class="col-12 col-md-4">
+            <label for="data" class="form-label">Data de destino</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+              <input type="date" id="data" class="form-control" min="1996-01-01" required>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-5">
+            <label for="site" class="form-label">Site para visitar no passado</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-globe2"></i></span>
+              <input type="text" id="site" class="form-control" value="google.com" required>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3 d-grid align-self-end">
+            <button type="submit" id="botao" class="btn btn-neon">
+              <i class="bi bi-lightning-charge-fill"></i> Viajar no tempo
+            </button>
+          </div>
+        </form>
+
+        <div class="mt-4">
+          <span class="small text-secondary d-block mb-2">Destinos rápidos:</span>
+          <div id="atalhos" class="d-flex flex-wrap gap-2">
+            <button type="button" class="chip" data-data="2001-09-11" data-site="cnn.com">11/09/2001</button>
+            <button type="button" class="chip" data-data="2002-06-30" data-site="globo.com">Penta em 2002</button>
+            <button type="button" class="chip" data-data="2007-06-29" data-site="apple.com">iPhone chega</button>
+            <button type="button" class="chip" data-data="2008-09-02" data-site="google.com">Nasce o Chrome</button>
+          </div>
+        </div>
+
+        <div id="status" class="mt-3 small" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="row g-4">
+      <section class="col-12 col-lg-6">
+        <div class="janela h-100">
+          <div class="janela-barra">
+            <span class="ponto ponto-vermelho"></span>
+            <span class="ponto ponto-amarelo"></span>
+            <span class="ponto ponto-verde"></span>
+            <span class="janela-titulo"><i class="bi bi-newspaper"></i> o_mundo_naquele_dia</span>
+          </div>
+          <div class="janela-corpo" id="eventos">
+            <div class="vazio"><i class="bi bi-clock-history"></i><p class="mb-0">Aguardando coordenadas...</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12 col-lg-6">
+        <div class="janela h-100">
+          <div class="janela-barra">
+            <span class="ponto ponto-vermelho"></span>
+            <span class="ponto ponto-amarelo"></span>
+            <span class="ponto ponto-verde"></span>
+            <span class="janela-titulo"><i class="bi bi-archive"></i> a_internet_da_epoca</span>
+          </div>
+          <div class="janela-corpo" id="arquivo">
+            <div class="vazio"><i class="bi bi-window-stack"></i><p class="mb-0">Nenhum site carregado.</p></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="text-center small text-secondary pb-4">
+    Dados: Wikimedia On This Day e Internet Archive (Wayback Machine)
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

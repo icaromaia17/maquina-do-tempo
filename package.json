@@ -1,0 +1,26 @@
+{
+  "name": "maquina-do-tempo",
+  "version": "1.0.0",
+  "description": "Escolha uma data e veja o que o mundo vivia e como a internet era naquele dia, usando Wikimedia e Wayback Machine.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "wikimedia",
+    "wayback-machine",
+    "bootstrap"
+  ],
+  "author": "Ícaro",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
